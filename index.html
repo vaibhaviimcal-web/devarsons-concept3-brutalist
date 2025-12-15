@@ -7,330 +7,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --black: #000000; --white: #FFFFFF; --gold: #D4AF37; --grey: #999999; }
+body { font-family: 'Montserrat', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+.container { max-width: 1600px; margin: 0 auto; padding: 0 4rem; }
 
-:root {
-    --black: #000000;
-    --white: #FFFFFF;
-    --gold: #D4AF37;
-    --grey: #999999;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--black);
-    color: var(--white);
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 4rem;
-}
-
-/* HEADER - MINIMAL */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.98);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--gold);
-    z-index: 1000;
-    padding: 1rem 4rem;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
+header { position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gold); z-index: 1000; padding: 1rem 4rem; }
+.header-content { display: flex; justify-content: space-between; align-items: center; }
 .logo-img { height: 50px; }
-
-nav ul {
-    display: flex;
-    gap: 3rem;
-    list-style: none;
-}
-
-nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: color 0.3s;
-}
-
+nav ul { display: flex; gap: 3rem; list-style: none; }
+nav a { color: var(--white); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.3s; }
 nav a:hover { color: var(--gold); }
 
-/* HERO - MASSIVE TYPOGRAPHY */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 100px;
-    position: relative;
-}
+.hero { min-height: 100vh; display: flex; align-items: center; padding-top: 100px; position: relative; }
+.est-badge { position: absolute; top: 120px; right: 4rem; font-size: 1rem; font-weight: 900; letter-spacing: 0.3em; color: var(--gold); writing-mode: vertical-rl; }
+.hero-title-massive { font-size: clamp(4rem, 12vw, 10rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 2rem; }
+.hero-title-massive .line1 { display: block; color: var(--white); }
+.hero-title-massive .line2 { display: block; color: var(--gold); }
+.hero-title-massive .line3 { display: block; color: var(--white); }
+.hero-subtitle-large { font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 300; color: var(--grey); max-width: 900px; margin-bottom: 3rem; line-height: 1.4; }
 
-.est-badge {
-    position: absolute;
-    top: 120px;
-    right: 4rem;
-    font-size: 1rem;
-    font-weight: 900;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-}
+.grid-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin: 8rem 0; }
+.grid-item { padding: 3rem; border: 1px solid var(--gold); }
+.grid-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: -0.02em; }
+.grid-content { font-size: 1rem; line-height: 1.8; color: var(--grey); }
 
-.hero-title-massive {
-    font-size: clamp(4rem, 12vw, 10rem);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -0.05em;
-    margin-bottom: 2rem;
-}
+.quote-massive { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.4; color: var(--white); margin: 8rem 0; max-width: 1000px; position: relative; }
+.quote-massive::before { content: '"'; font-size: 15rem; position: absolute; top: -5rem; left: -3rem; color: var(--gold); opacity: 0.1; font-family: Georgia; }
+.quote-author-large { font-size: 1.2rem; color: var(--gold); margin-top: 2rem; font-style: normal; font-weight: 700; }
 
-.hero-title-massive .line1 {
-    display: block;
-    color: var(--white);
-}
+.buzzwords-scattered { margin: 8rem 0; position: relative; min-height: 400px; }
+.buzzword-large { position: absolute; font-size: clamp(1rem, 2vw, 1.5rem); font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s; }
+.buzzword-large:hover { color: var(--white); transform: scale(1.1); }
+.bw1 { top: 0; left: 10%; } .bw2 { top: 50px; right: 15%; } .bw3 { top: 100px; left: 30%; } .bw4 { top: 150px; right: 5%; }
+.bw5 { top: 200px; left: 5%; } .bw6 { top: 250px; right: 25%; } .bw7 { top: 300px; left: 40%; } .bw8 { top: 350px; right: 35%; }
+.bw9 { top: 50px; left: 50%; } .bw10 { top: 150px; left: 15%; } .bw11 { top: 250px; left: 60%; } .bw12 { top: 100px; right: 40%; }
+.bw13 { top: 200px; right: 10%; } .bw14 { top: 300px; left: 25%; }
 
-.hero-title-massive .line2 {
-    display: block;
-    color: var(--gold);
-}
+.stats-section { margin: 8rem 0; }
+.stat-row { display: flex; justify-content: space-between; align-items: center; padding: 3rem 0; border-bottom: 1px solid var(--gold); }
+.stat-number { font-size: clamp(4rem, 8vw, 7rem); font-weight: 900; color: var(--gold); line-height: 1; }
+.stat-label { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.stat-detail { font-size: 1rem; color: var(--grey); }
 
-.hero-title-massive .line3 {
-    display: block;
-    color: var(--white);
-}
+.industries-blocks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--gold); margin: 6rem 0; }
+.industry-block { background: var(--black); padding: 3rem; transition: all 0.3s; cursor: pointer; }
+.industry-block:hover { background: var(--gold); color: var(--black); }
+.industry-block-title { font-size: 2rem; font-weight: 900; margin-bottom: 1rem; text-transform: uppercase; }
+.industry-block-text { font-size: 0.9rem; line-height: 1.6; }
 
-.hero-subtitle-large {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 300;
-    color: var(--grey);
-    max-width: 900px;
-    margin-bottom: 3rem;
-    line-height: 1.4;
-}
+.timeline-brutalist { margin: 8rem 0; }
+.timeline-row { display: flex; justify-content: space-between; padding: 2rem 0; border-bottom: 1px solid rgba(212, 175, 55, 0.3); }
+.timeline-year-large { font-size: 3rem; font-weight: 900; color: var(--gold); min-width: 200px; }
+.timeline-desc { font-size: 1.1rem; color: var(--grey); line-height: 1.6; }
 
-/* GRID SECTIONS - ASYMMETRIC */
-.grid-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin: 8rem 0;
-}
+table { width: 100%; border-collapse: collapse; margin: 4rem 0; }
+th, td { padding: 1.5rem; text-align: left; border-bottom: 1px solid var(--gold); }
+th { background: var(--gold); color: var(--black); font-weight: 900; text-transform: uppercase; }
+td { color: var(--grey); }
+tr:hover { background: rgba(212, 175, 55, 0.1); }
 
-.grid-item {
-    padding: 3rem;
-    border: 1px solid var(--gold);
-}
+.cta-bold { text-align: center; margin: 10rem 0; padding: 6rem 2rem; border: 3px solid var(--gold); }
+.cta-title-massive { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: -0.03em; }
+.btn { padding: 1.5rem 4rem; font-size: 1.1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; border: none; cursor: pointer; transition: all 0.3s; margin: 0 1rem; }
+.btn-primary { background: var(--gold); color: var(--black); }
+.btn-primary:hover { background: var(--white); }
+.btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); }
+.btn-secondary:hover { background: var(--white); color: var(--black); }
 
-.grid-title {
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-}
-
-.grid-content {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--grey);
-}
-
-/* QUOTE AS DESIGN ELEMENT */
-.quote-massive {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1.4;
-    color: var(--white);
-    margin: 8rem 0;
-    max-width: 1000px;
-    position: relative;
-}
-
-.quote-massive::before {
-    content: '"';
-    font-size: 15rem;
-    position: absolute;
-    top: -5rem;
-    left: -3rem;
-    color: var(--gold);
-    opacity: 0.1;
-    font-family: Georgia;
-}
-
-.quote-author-large {
-    font-size: 1.2rem;
-    color: var(--gold);
-    margin-top: 2rem;
-    font-style: normal;
-    font-weight: 700;
-}
-
-/* BUZZWORDS - SCATTERED */
-.buzzwords-scattered {
-    margin: 8rem 0;
-    position: relative;
-    min-height: 400px;
-}
-
-.buzzword-large {
-    position: absolute;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    font-weight: 700;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: all 0.3s;
-}
-
-.buzzword-large:hover {
-    color: var(--white);
-    transform: scale(1.1);
-}
-
-.bw1 { top: 0; left: 10%; }
-.bw2 { top: 50px; right: 15%; }
-.bw3 { top: 100px; left: 30%; }
-.bw4 { top: 150px; right: 5%; }
-.bw5 { top: 200px; left: 5%; }
-.bw6 { top: 250px; right: 25%; }
-.bw7 { top: 300px; left: 40%; }
-
-/* STATS - LARGE NUMBERS */
-.stats-section {
-    margin: 8rem 0;
-}
-
-.stat-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3rem 0;
-    border-bottom: 1px solid var(--gold);
-}
-
-.stat-number {
-    font-size: clamp(4rem, 8vw, 7rem);
-    font-weight: 900;
-    color: var(--gold);
-    line-height: 1;
-}
-
-.stat-label {
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-.stat-detail {
-    font-size: 1rem;
-    color: var(--grey);
-}
-
-/* INDUSTRIES - BOLD BLOCKS */
-.industries-blocks {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--gold);
-    margin: 6rem 0;
-}
-
-.industry-block {
-    background: var(--black);
-    padding: 3rem;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-.industry-block:hover {
-    background: var(--gold);
-    color: var(--black);
-}
-
-.industry-block-title {
-    font-size: 2rem;
-    font-weight: 900;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
-
-.industry-block-text {
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-/* CTA - BOLD */
-.cta-bold {
-    text-align: center;
-    margin: 10rem 0;
-    padding: 6rem 2rem;
-    border: 3px solid var(--gold);
-}
-
-.cta-title-massive {
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 900;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: -0.03em;
-}
-
-.btn {
-    padding: 1.5rem 4rem;
-    font-size: 1.1rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin: 0 1rem;
-}
-
-.btn-primary {
-    background: var(--gold);
-    color: var(--black);
-}
-
-.btn-primary:hover {
-    background: var(--white);
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid var(--white);
-    color: var(--white);
-}
-
-.btn-secondary:hover {
-    background: var(--white);
-    color: var(--black);
-}
-
-/* FOOTER */
-footer {
-    border-top: 1px solid var(--gold);
-    padding: 3rem 0;
-    text-align: center;
-}
+footer { border-top: 1px solid var(--gold); padding: 3rem 0; text-align: center; }
 
 @media (max-width: 1024px) {
     .grid-section { grid-template-columns: 1fr; }
     .industries-blocks { grid-template-columns: 1fr; }
     .stat-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .timeline-row { flex-direction: column; }
 }
 
 @media (max-width: 768px) {
@@ -353,6 +103,7 @@ footer {
                     <li><a href="#manufacturing">Manufacturing</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#quality">Quality</a></li>
+                    <li><a href="#ehss">EHS&S</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -382,7 +133,7 @@ footer {
         </div>
     </section>
 
-    <section>
+    <section id="profile">
         <div class="container">
             <div class="grid-section">
                 <div class="grid-item">
@@ -411,6 +162,13 @@ footer {
                 <div class="buzzword-large bw5">CHEMISTRY ORIENTED</div>
                 <div class="buzzword-large bw6">DECISIVE & AGILE</div>
                 <div class="buzzword-large bw7">CUSTOMER-CENTRIC</div>
+                <div class="buzzword-large bw8">RESPONSIBLE SOURCING</div>
+                <div class="buzzword-large bw9">STRONG EHS</div>
+                <div class="buzzword-large bw10">TECHNICAL ASSISTANCE</div>
+                <div class="buzzword-large bw11">CONSISTENCY</div>
+                <div class="buzzword-large bw12">BACKWARD INTEGRATED</div>
+                <div class="buzzword-large bw13">EXPERTISE</div>
+                <div class="buzzword-large bw14">DIFFERENT APPROACH</div>
             </div>
         </div>
     </section>
@@ -426,7 +184,34 @@ footer {
 
     <section>
         <div class="container">
+            <div class="timeline-brutalist">
+                <h2 class="grid-title">MILESTONES</h2>
+                <div class="timeline-row"><div class="timeline-year-large">1923</div><div class="timeline-desc">Group established as solution provider</div></div>
+                <div class="timeline-row"><div class="timeline-year-large">1960-70</div><div class="timeline-desc">Manufacturing established</div></div>
+                <div class="timeline-row"><div class="timeline-year-large">1978</div><div class="timeline-desc">First Export to ICI Australia</div></div>
+                <div class="timeline-row"><div class="timeline-year-large">1987</div><div class="timeline-desc">COLOUR INDEX International</div></div>
+                <div class="timeline-row"><div class="timeline-year-large">1992</div><div class="timeline-desc">First Blue Liquid Dye for kerosene (IOCL)</div></div>
+                <div class="timeline-row"><div class="timeline-year-large">2005</div><div class="timeline-desc">ISO 9001, ISO 14001</div></div>
+                <div class="timeline-row"><div class="timeline-year-large">2012</div><div class="timeline-desc">DSIR R&D, ERP software</div></div>
+                <div class="timeline-row"><div class="timeline-year-large">2013</div><div class="timeline-desc">Gujarat Cleaner Production Award</div></div>
+                <div class="timeline-row"><div class="timeline-year-large">2018</div><div class="timeline-desc">SAP Business One</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="quote-massive">
+                If you really look closely, most overnight successes took a long time.
+                <div class="quote-author-large">— Steve Jobs</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
             <div class="stats-section">
+                <h2 class="grid-title">GLOBAL REACH</h2>
                 <div class="stat-row">
                     <div>
                         <div class="stat-number">50%</div>
@@ -449,6 +234,25 @@ footer {
                     <div class="stat-detail">Far East & Other Countries</div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2 class="grid-title">MAJOR APPLICATION GROUPS</h2>
+            <table>
+                <thead><tr><th>Industry</th><th>Applications</th></tr></thead>
+                <tbody>
+                    <tr><td>General Plastic</td><td>Master Batch, PVC Film, PVC Pipe, Engineering Compounding, Reprocess Granules, EVA Footwear, PU Foam, Monofilament Yarn, Polycarbonate, Polystyrene, Polyolefin</td></tr>
+                    <tr><td>High Performance</td><td>PET Master Batch, Polyester Fiber</td></tr>
+                    <tr><td>General Home Care</td><td>Detergent Cake, Speckles, Dishwash, Toilet Cleaner, Phenyl, Liquid Detergent</td></tr>
+                    <tr><td>General Cosmetic</td><td>Hair Oil, Kumkum, Lipstick, Toilet Soap, Eye Liner, Nail Polish, Shampoo</td></tr>
+                    <tr><td>General Lubricant</td><td>Engine Oil, Grease, Coolant</td></tr>
+                    <tr><td>Food Colours</td><td>General Food, Bakery</td></tr>
+                    <tr><td>Paint and Ink</td><td>Adhesive, Printing Ink, Varnish, Paint</td></tr>
+                    <tr><td>Agro</td><td>Seeds, Pesticides, Fertilizer</td></tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -500,7 +304,22 @@ footer {
         </div>
     </section>
 
-    <section>
+    <section id="manufacturing">
+        <div class="container">
+            <div class="grid-section">
+                <div class="grid-item">
+                    <h2 class="grid-title">Manufacturing</h2>
+                    <p class="grid-content">Condensation • Bromination • Diazotization • Coupling • Acylation & Alkylation • Hydrolysis • Oxidation & Reduction • Distillation • Milling</p>
+                </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">Laboratory</h2>
+                    <p class="grid-content">UV-Visible Spectrophotometers • Atomic Absorption Spectrophotometer • HPTLC • Karl-Fischer • Melting Point Analyzer • Moisture Analyzer • Microbiological Lab • pH Meter & Viscometer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quality">
         <div class="container">
             <div class="grid-section">
                 <div class="grid-item">
@@ -519,6 +338,14 @@ footer {
                     <h2 class="grid-title">Export House</h2>
                     <p class="grid-content">Government Recognized</p>
                 </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">DSIR R&D</h2>
+                    <p class="grid-content">Research Facility</p>
+                </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">SEDEX</h2>
+                    <p class="grid-content">Responsible Sourcing</p>
+                </div>
             </div>
         </div>
     </section>
@@ -532,9 +359,50 @@ footer {
         </div>
     </section>
 
+    <section id="ehss">
+        <div class="container">
+            <div class="grid-section">
+                <div class="grid-item">
+                    <h2 class="grid-title">Water Recycling</h2>
+                    <p class="grid-content">State of the art water recycling project with solar power. Treated water recycled for boiler and cooling tower feed.</p>
+                </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">Cleaner Production</h2>
+                    <p class="grid-content">Gujarat Cleaner Production Award 2012-13. Recognized by Government of Gujarat.</p>
+                </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">Policies</h2>
+                    <p class="grid-content">Harassment • Grievance • Ethical Trading • HIV AIDS • Equal Opportunities • Anti-bribery • Collective Bargaining</p>
+                </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">Committees</h2>
+                    <p class="grid-content">Grievance • Harassment • Works • Safety • Canteen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section>
         <div class="container">
-            <div class="cta-bold">
+            <div class="quote-massive">
+                The most dangerous poison is the feeling of achievement. The antidote is to every evening think what can be done better tomorrow.
+                <div class="quote-author-large">— Ingvar Kamprad, founder of IKEA</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="quote-massive">
+                Today's best practices lead to dead ends; the best paths are new and untried.
+                <div class="quote-author-large">— Peter Thiel, co-founder of PayPal</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="cta-bold" id="contact">
                 <h2 class="cta-title-massive">Partner With Excellence</h2>
                 <button class="btn btn-primary">Request Consultation</button>
                 <button class="btn btn-secondary">Download Brochure</button>
@@ -546,7 +414,7 @@ footer {
         <div class="container">
             <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/cab453ed-7d3e-4dfa-9012-038dbc50c1c5/2025-12-15T18-55-10-698Z-88cbe1d7-chat-image-1765824910680-0.jpg" alt="Devarsons" style="height: 70px; margin-bottom: 1rem;">
             <p style="color: var(--grey);">&copy; 2025 Devarsons Industries Private Limited</p>
-            <p style="color: var(--gold); margin-top: 0.5rem;">Group Established 1923</p>
+            <p style="color: var(--gold); margin-top: 0.5rem;">Group Established 1923 | Odhav, GIDC, Ahmedabad</p>
         </div>
     </footer>
 
@@ -554,21 +422,12 @@ footer {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
 gsap.registerPlugin(ScrollTrigger);
-
 gsap.utils.toArray('.industry-block').forEach(block => {
-    gsap.from(block, {
-        scrollTrigger: { trigger: block, start: 'top 85%' },
-        opacity: 0, scale: 0.95, duration: 0.5
-    });
+    gsap.from(block, {scrollTrigger: { trigger: block, start: 'top 85%' }, opacity: 0, scale: 0.95, duration: 0.5});
 });
-
 gsap.utils.toArray('.buzzword-large').forEach(word => {
-    gsap.from(word, {
-        scrollTrigger: { trigger: '.buzzwords-scattered', start: 'top 75%' },
-        opacity: 0, y: 50, stagger: 0.1, duration: 0.6
-    });
+    gsap.from(word, {scrollTrigger: { trigger: '.buzzwords-scattered', start: 'top 75%' }, opacity: 0, y: 50, stagger: 0.1, duration: 0.6});
 });
-
 let lastScroll = 0;
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
