@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devarsons - The Colour Solution Company | Est. 1923</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --gold: #D4AF37;
+    --grey: #999999;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+/* HEADER - MINIMAL */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gold);
+    z-index: 1000;
+    padding: 1rem 4rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img { height: 50px; }
+
+nav ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+}
+
+nav a:hover { color: var(--gold); }
+
+/* HERO - MASSIVE TYPOGRAPHY */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    position: relative;
+}
+
+.est-badge {
+    position: absolute;
+    top: 120px;
+    right: 4rem;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.hero-title-massive {
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    margin-bottom: 2rem;
+}
+
+.hero-title-massive .line1 {
+    display: block;
+    color: var(--white);
+}
+
+.hero-title-massive .line2 {
+    display: block;
+    color: var(--gold);
+}
+
+.hero-title-massive .line3 {
+    display: block;
+    color: var(--white);
+}
+
+.hero-subtitle-large {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 300;
+    color: var(--grey);
+    max-width: 900px;
+    margin-bottom: 3rem;
+    line-height: 1.4;
+}
+
+/* GRID SECTIONS - ASYMMETRIC */
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 8rem 0;
+}
+
+.grid-item {
+    padding: 3rem;
+    border: 1px solid var(--gold);
+}
+
+.grid-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.grid-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--grey);
+}
+
+/* QUOTE AS DESIGN ELEMENT */
+.quote-massive {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.4;
+    color: var(--white);
+    margin: 8rem 0;
+    max-width: 1000px;
+    position: relative;
+}
+
+.quote-massive::before {
+    content: '"';
+    font-size: 15rem;
+    position: absolute;
+    top: -5rem;
+    left: -3rem;
+    color: var(--gold);
+    opacity: 0.1;
+    font-family: Georgia;
+}
+
+.quote-author-large {
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-top: 2rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* BUZZWORDS - SCATTERED */
+.buzzwords-scattered {
+    margin: 8rem 0;
+    position: relative;
+    min-height: 400px;
+}
+
+.buzzword-large {
+    position: absolute;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s;
+}
+
+.buzzword-large:hover {
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.bw1 { top: 0; left: 10%; }
+.bw2 { top: 50px; right: 15%; }
+.bw3 { top: 100px; left: 30%; }
+.bw4 { top: 150px; right: 5%; }
+.bw5 { top: 200px; left: 5%; }
+.bw6 { top: 250px; right: 25%; }
+.bw7 { top: 300px; left: 40%; }
+
+/* STATS - LARGE NUMBERS */
+.stats-section {
+    margin: 8rem 0;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gold);
+}
+
+.stat-number {
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.stat-detail {
+    font-size: 1rem;
+    color: var(--grey);
+}
+
+/* INDUSTRIES - BOLD BLOCKS */
+.industries-blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--gold);
+    margin: 6rem 0;
+}
+
+.industry-block {
+    background: var(--black);
+    padding: 3rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.industry-block:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.industry-block-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.industry-block-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* CTA - BOLD */
+.cta-bold {
+    text-align: center;
+    margin: 10rem 0;
+    padding: 6rem 2rem;
+    border: 3px solid var(--gold);
+}
+
+.cta-title-massive {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.btn {
+    padding: 1.5rem 4rem;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 1rem;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.btn-primary:hover {
+    background: var(--white);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--black);
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid var(--gold);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .grid-section { grid-template-columns: 1fr; }
+    .industries-blocks { grid-template-columns: 1fr; }
+    .stat-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 2rem; }
+    header { padding: 1rem 2rem; }
+    nav ul { display: none; }
+    .est-badge { position: static; writing-mode: horizontal-tb; margin-bottom: 2rem; }
+    .buzzwords-scattered { position: static; }
+    .buzzword-large { position: static; display: block; margin: 1rem 0; }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/cab453ed-7d3e-4dfa-9012-038dbc50c1c5/2025-12-15T18-55-10-698Z-88cbe1d7-chat-image-1765824910680-0.jpg" alt="Devarsons" class="logo-img">
+            <nav>
+                <ul>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#manufacturing">Manufacturing</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#quality">Quality</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="est-badge">EST. 1923</div>
+        <div class="container">
+            <h1 class="hero-title-massive">
+                <span class="line1">APPLICATION</span>
+                <span class="line2">BASED</span>
+                <span class="line3">INNOVATION</span>
+            </h1>
+            <p class="hero-subtitle-large">
+                Strategic preferred supplier to global petroleum, plastics, cosmetics and defense companies.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="quote-massive">
+                Don't find customers for your products, find products for your customers.
+                <div class="quote-author-large">— Seth Godin</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="grid-section">
+                <div class="grid-item">
+                    <h2 class="grid-title">Who We Are</h2>
+                    <p class="grid-content">
+                        ISO 9001, ISO 14001 and OHSAS 18001 accredited company, developing and producing specialty colorants since 1923. Over 50 years of accumulated experience in Color Application.
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">Our Focus</h2>
+                    <p class="grid-content">
+                        Developing new molecules or customizing current known molecules to meet highly specialized applications. We don't produce one class of dye but an assortment with different chemistries.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="buzzwords-scattered">
+                <div class="buzzword-large bw1">LEAN MANAGEMENT</div>
+                <div class="buzzword-large bw2">SAP INTEGRATED</div>
+                <div class="buzzword-large bw3">APPLICATION ORIENTED</div>
+                <div class="buzzword-large bw4">DEBT FREE</div>
+                <div class="buzzword-large bw5">CHEMISTRY ORIENTED</div>
+                <div class="buzzword-large bw6">DECISIVE & AGILE</div>
+                <div class="buzzword-large bw7">CUSTOMER-CENTRIC</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="quote-massive">
+                The secret of success is to do the common thing uncommonly well.
+                <div class="quote-author-large">— John D. Rockefeller Jr.</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="stats-section">
+                <div class="stat-row">
+                    <div>
+                        <div class="stat-number">50%</div>
+                        <div class="stat-label">Americas</div>
+                    </div>
+                    <div class="stat-detail">USA, Canada, South America, Mexico</div>
+                </div>
+                <div class="stat-row">
+                    <div>
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">Europe</div>
+                    </div>
+                    <div class="stat-detail">EU, UK & Associated Countries</div>
+                </div>
+                <div class="stat-row">
+                    <div>
+                        <div class="stat-number">10%</div>
+                        <div class="stat-label">Asia Pacific</div>
+                    </div>
+                    <div class="stat-detail">Far East & Other Countries</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="industries-blocks">
+                <div class="industry-block">
+                    <h3 class="industry-block-title">Cosmetics</h3>
+                    <p class="industry-block-text">EU Cosmetics, US FDA, Schedule Q India. Hair oil, kumkum, lipstick, nail polish, shampoo.</p>
+                </div>
+                <div class="industry-block">
+                    <h3 class="industry-block-title">Polymers</h3>
+                    <p class="industry-block-text">Master batch, PVC, engineering plastics, high-performance PET, polyester fiber.</p>
+                </div>
+                <div class="industry-block">
+                    <h3 class="industry-block-title">Petroleum</h3>
+                    <p class="industry-block-text">Engine oil, grease, coolant. First Blue Liquid Dye for kerosene in India (1992).</p>
+                </div>
+                <div class="industry-block">
+                    <h3 class="industry-block-title">Specialized</h3>
+                    <p class="industry-block-text">Medical, NDT, Defense. Highly evolved applications with custom molecular development.</p>
+                </div>
+                <div class="industry-block">
+                    <h3 class="industry-block-title">Textiles</h3>
+                    <p class="industry-block-text">High-end VAT dyes, metal complex dyes. Superior wash and light fastness.</p>
+                </div>
+                <div class="industry-block">
+                    <h3 class="industry-block-title">Agriculture</h3>
+                    <p class="industry-block-text">Seeds, pesticides, fertilizers. Environmentally safe formulations.</p>
+                </div>
+                <div class="industry-block">
+                    <h3 class="industry-block-title">Inks & Paints</h3>
+                    <p class="industry-block-text">Printing ink, varnish, paint. Fluorescent colorants for markers.</p>
+                </div>
+                <div class="industry-block">
+                    <h3 class="industry-block-title">Home Care</h3>
+                    <p class="industry-block-text">Detergent, dishwash, toilet cleaner. Speckles and liquid formulations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="quote-massive">
+                There is only one boss. The customer. And he can fire everybody in the company from the chairman on down, simply by spending his money somewhere else.
+                <div class="quote-author-large">— Sam Walton, Founder of Walmart</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="grid-section">
+                <div class="grid-item">
+                    <h2 class="grid-title">ISO 9001</h2>
+                    <p class="grid-content">Quality Management System</p>
+                </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">ISO 14001</h2>
+                    <p class="grid-content">Environmental Management</p>
+                </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">OHSAS 18001</h2>
+                    <p class="grid-content">Health & Safety</p>
+                </div>
+                <div class="grid-item">
+                    <h2 class="grid-title">Export House</h2>
+                    <p class="grid-content">Government Recognized</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="quote-massive">
+                Great companies are built on great products.
+                <div class="quote-author-large">— Elon Musk</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="cta-bold">
+                <h2 class="cta-title-massive">Partner With Excellence</h2>
+                <button class="btn btn-primary">Request Consultation</button>
+                <button class="btn btn-secondary">Download Brochure</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/cab453ed-7d3e-4dfa-9012-038dbc50c1c5/2025-12-15T18-55-10-698Z-88cbe1d7-chat-image-1765824910680-0.jpg" alt="Devarsons" style="height: 70px; margin-bottom: 1rem;">
+            <p style="color: var(--grey);">&copy; 2025 Devarsons Industries Private Limited</p>
+            <p style="color: var(--gold); margin-top: 0.5rem;">Group Established 1923</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray('.industry-block').forEach(block => {
+    gsap.from(block, {
+        scrollTrigger: { trigger: block, start: 'top 85%' },
+        opacity: 0, scale: 0.95, duration: 0.5
+    });
+});
+
+gsap.utils.toArray('.buzzword-large').forEach(word => {
+    gsap.from(word, {
+        scrollTrigger: { trigger: '.buzzwords-scattered', start: 'top 75%' },
+        opacity: 0, y: 50, stagger: 0.1, duration: 0.6
+    });
+});
+
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const header = document.querySelector('header');
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        header.style.transform = 'translateY(-100%)';
+    } else {
+        header.style.transform = 'translateY(0)';
+    }
+    lastScroll = currentScroll;
+});
+    </script>
+</body>
+</html>
